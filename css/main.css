@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Gravity-Regular", sans-serif;
+}
+
+.global-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    color: white;
+    display: flex;
+}
+
+.home-image {
+    background-image: url("../images/ruzgar-image.JPG");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-title-div {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+}
+
+.home-title {
+    color: white;
+    font-weight: 500;
+    letter-spacing: 19px;
+}
+
+.home-subtitle {
+    color: white;
+    letter-spacing: 10px;
+}
