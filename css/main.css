@@ -8,15 +8,39 @@ body {
     font-family: "Gravity-Regular", sans-serif;
 }
 
-.global-nav {
+header {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 18%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px 10px;
 }
 
-.container {
+.global-nav {
+    list-style: none;
+}
+
+.global-nav ul li {
+    display: inline-block;
+    padding: 15px 20px;
+    transition: all 0.3s ease-in;
+}
+
+.global-nav a {
+    text-decoration: none;
     color: white;
-    display: flex;
+    letter-spacing: 1px;
+}
+
+.global-nav ul li:hover {
+    cursor: pointer;
+    background-color:rgba(255, 255, 255, 0.08);
+}
+
+#contact-me {
+    margin-left: 32rem;
 }
 
 .home-image {
