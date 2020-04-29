@@ -6,14 +6,6 @@ import { UserInterface } from "./UserInterface.js";
 const userInterface = new UserInterface();
 const apiServices = new APIServices();
 
-function init() {
-    console.log("Application has started!");
-    userInterface.eventListeners(userInterface.dropdownSwitcher);
-    userInterface.updateNavBar(userInterface.dropdownSwitcher);
-}
-
-init();
-
 function discoMode(updateTime) {
     const colors = ["blue", "red", "orange", "yellow", "purple"];
     $(".home-image").css("background-image", "none");
@@ -24,4 +16,11 @@ function discoMode(updateTime) {
     console.log("disco, disco");
 }
 
-discoMode(2200);
+
+function init() {
+    console.log("Application has started!");
+    userInterface.eventListeners(userInterface.dropdownSwitcher);
+    userInterface.updateNavBar(userInterface.dropdownSwitcher);
+}
+
+init();
