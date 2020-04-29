@@ -21,7 +21,20 @@ header {
 .global-nav {
     list-style: none;
     position: relative;
-    left: 18%;
+    left: 15%;
+}
+
+.global-nav-ul {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown div {
+    display: inline-block;
 }
 
 .global-nav ul li {
@@ -34,12 +47,27 @@ header {
     text-decoration: none;
     color: white;
     letter-spacing: 1px;
-    
 }
 
 .global-nav ul li:hover {
     cursor: pointer;
-    background-color:rgba(255, 255, 255, 0.08);
+    background-color:rgba(255, 255, 255, 0.05);
+}
+
+#nav-button {
+    position: absolute;
+    display: none;
+    border-radius: 5px;
+    background-color: white;
+    border: 0.6px solid grey;
+    width: 4rem;
+    vertical-align: middle;
+}
+
+.fa-bars {
+    font-size: 35px;
+    font-weight: 100;
+    padding: 3px;
 }
 
 #contact-me {
@@ -64,7 +92,6 @@ header {
     color: white;
     font-weight: 500;
     letter-spacing: 19px;
-    
 }
 
 .home-subtitle {
@@ -73,7 +100,6 @@ header {
 }
 
 @media only screen and (max-width: 1500px) {
-
     #contact-me {
         margin-left: 25rem;
     }
@@ -86,9 +112,46 @@ header {
     }
 
     .home-title-div {
-        position: absolute;
-        top: 45%;
         left: 25%;
-        
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+
+    #contact-me {
+        margin-left: 14rem;
+    }
+
+    .home-title-div {
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+
+    header {
+        padding: 0px 10px;
+        background-color: white;
+    }
+
+    .global-nav a {
+        color: black;
+    }
+
+    #contact-me {
+        margin: 0;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .dropdown div {
+        display: block;
+    }
+
+    #nav-button {
+        display: block;
+        left: 80%;
     }
 }

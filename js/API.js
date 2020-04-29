@@ -12,6 +12,6 @@ export class APIServices {
     }
 
     test() {
-        console.log("hello")
+        console.log("hello");
     }
 }

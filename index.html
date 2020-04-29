@@ -10,18 +10,20 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="Fonts/Gravity-Regular.otf">
-        
     </head>
 
     <body>
 
         <header>
+            <button id="nav-button"><i class="fas fa-bars"></i></button>
             <nav class="global-nav">
-                <ul class="software-nav">
+                <ul class="global-nav-ul">
                     <li><a href="#">Ruzgar Ata Ozkan</a></li>
-                    <li><a href="#">Software</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li id="contact-me"><a href="#">Contact Me</a></li>
+                    <div class="dropdown">
+                        <div><li><a href="#">Software</a></li></div>
+                        <div><li><a href="#">About Me</a></li></div>
+                        <div><li id="contact-me"><a href="#">Contact Me</a></li></div>
+                    </div>
                 </ul>
             </nav>
         </header>
@@ -35,7 +37,7 @@
 
         <script src="https://kit.fontawesome.com/de31605d8a.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script type="module" src="js/main.js" async defer></script>
+        <script type="module" text="javascript" src="js/Main.js" async defer></script>
         
     </body>
 
