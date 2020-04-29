@@ -20,14 +20,14 @@ header {
 
 .global-nav {
     list-style: none;
-    
+    position: relative;
+    left: 18%;
 }
 
 .global-nav ul li {
     display: inline-block;
     padding: 15px 20px;
     transition: all 0.3s ease-in;
-    
 }
 
 .global-nav a {
@@ -58,7 +58,6 @@ header {
     position: absolute;
     top: 45%;
     left: 30%;
-    
 }
 
 .home-title {
@@ -75,20 +74,12 @@ header {
 
 @media only screen and (max-width: 1500px) {
 
-    header {
-        left: 15%;
-    }
-
     #contact-me {
         margin-left: 25rem;
     }
 }
 
 @media only screen and (max-width: 1300px) {
-
-    header {
-        left: 15%;
-    }
 
     #contact-me {
         margin-left: 18rem;

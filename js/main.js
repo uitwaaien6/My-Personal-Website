@@ -1,6 +1,6 @@
+"use strict";
 
-async function getAPI(string) {
-    const url = string;
-    const result = await fetch(url);
-    return result;
-}
+import * as API from "./API.js";
+
+const apiServices = new API.APIServices();
+
