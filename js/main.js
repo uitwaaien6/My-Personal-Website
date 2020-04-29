@@ -19,7 +19,7 @@ function discoMode(updateTime) {
 
 function init() {
     console.log("Application has started!");
-    userInterface.eventListeners(userInterface.dropdownSwitcher);
+    userInterface.IniteventListeners(userInterface.dropdownSwitcher);
     userInterface.updateNavBar(userInterface.dropdownSwitcher);
 }
 

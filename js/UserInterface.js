@@ -6,7 +6,9 @@ export class UserInterface {
         this.dropdownSwitcher = true;
     }
 
-    eventListeners(switcher) {
+    IniteventListeners(switcher) {
+
+        // navigaton dropdown menu slider sandvic button
         $("#nav-button").on("click", function() {
             if (!switcher) {
                 $(".dropdown").css("display","none");
@@ -18,8 +20,14 @@ export class UserInterface {
                 $(".dropdown").children().css("display", "block");
             }
         });
+
+        // read more scroll down listener
+        $(".read-more").on("click", function() {
+            window.scrollTo(innerHeight, 0);
+        });
     }
 
+    // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
     updateNavBar(switcher) {
         $(window).resize(function() {
             if (window.innerWidth >= 992) {
