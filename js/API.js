@@ -15,3 +15,8 @@ export class APIServices {
         console.log("hello");
     }
 }
+
+
+export async function getWikipediaAPI() {
+    const response = await fetch('https')
+}
