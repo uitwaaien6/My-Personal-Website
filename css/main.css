@@ -124,6 +124,9 @@ header {
     text-align: center;
     color: white;
     font-size: 30px;
+}
+
+.read-more .read-more-text {
     cursor: pointer;
 }
 

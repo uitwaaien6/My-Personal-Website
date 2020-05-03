@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
-export class UserInterface {
+class UserInterface {
 
     constructor() {
-        this.dropdownSwitcher = true;
+        this.switcher = true;
     }
 
-    IniteventListeners(switcher) {
+    eventListeners(switcher) {
 
         // navigaton dropdown menu slider sandvic button
         $("#nav-button").on("click", function() {
@@ -22,7 +22,7 @@ export class UserInterface {
         });
 
         // read more scroll down listener
-        $(".read-more").on("click", function() {
+        $(".read-more > .read-more-text").on("click", function() {
             window.scrollTo(innerHeight, 0);
         });
     }
@@ -47,3 +47,11 @@ export class UserInterface {
         });
     }
 }
+
+const userInterface = new UserInterface();
+
+(() => {
+    console.log('Application has started');
+    userInterface.eventListeners(userInterface.switcher);
+    userInterface.updateNavBar(userInterface.switcher);
+})();
