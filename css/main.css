@@ -101,11 +101,11 @@ header {
 
 .social-bar-container {
     position: absolute;
-    top: 45%;
+    top: 42%;
 }
 
 .social-bar-container li {
-    padding: 3px 7px;
+    padding: 4px 7px;
 }
 
 .social-bar-container li i:hover {
