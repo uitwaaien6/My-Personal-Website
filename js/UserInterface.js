@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 class UserInterface {
 
@@ -8,22 +8,26 @@ class UserInterface {
 
     eventListeners(switcher) {
 
+        $('#ruzgar-ata-ozkan').click(function() {
+            location.reload();
+        });
+
         // navigaton dropdown menu slider sandvic button
-        $("#nav-button").on("click", function() {
+        $('#nav-button').click(function() {
             if (!switcher) {
-                $(".dropdown").css("display","none");
-                $(".dropdown").children().css("display","none");
+                $('.dropdown').css('display', 'none');
+                $('.dropdown').children().css('display','none');
                 switcher = !switcher;
             } else if (switcher) {
-                $(".dropdown").css("display","block");
+                $('.dropdown').css('display','block');
                 switcher = !switcher;
-                $(".dropdown").children().css("display", "block");
+                $('.dropdown').children().css('display', 'block');
             }
         });
 
         // read more scroll down listener
         $(".read-more > .read-more-text").on("click", function() {
-            window.scrollTo(innerHeight, 0);
+            window.scrollTo(window.innerHeight, 0);
         });
     }
 
@@ -31,17 +35,17 @@ class UserInterface {
     updateNavBar(switcher) {
         $(window).resize(function() {
             if (window.innerWidth >= 992) {
-                $(".dropdown").css("display", "inline-block");
-                $(".dropdown").children().css("display", "inline-block");
+                $('.dropdown').css('display', 'inline-block');
+                $('.dropdown').children().css('display', 'inline-block');
             }
             else if (window.innerWidth < 991) {
                 if (!switcher) {
-                    $(".dropdown").css("display", "block");
+                    $('.dropdown').css('display', 'block');
                     $(".dropdown").children().css("display", "block");
                 }
                 if (switcher) {
-                    $(".dropdown").css("display", "none");
-                    $(".dropdown").children().css("display", "none");
+                    $('.dropdown').css('display', 'none');
+                    $('.dropdown').children().css('display', 'none');
                 }
             }
         });
@@ -55,3 +59,4 @@ const userInterface = new UserInterface();
     userInterface.eventListeners(userInterface.switcher);
     userInterface.updateNavBar(userInterface.switcher);
 })();
+

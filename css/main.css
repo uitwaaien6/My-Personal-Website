@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Gravity-Regular", sans-serif;
 }
@@ -24,7 +28,7 @@ header {
     left: 15%;
 }
 
-.global-nav-ul {
+.global-nav ul {
     margin: 0;
     padding: 0;
 }
@@ -101,11 +105,11 @@ header {
 
 .social-bar-container {
     position: absolute;
-    top: 42%;
+    top: 45%;
 }
 
 .social-bar-container li {
-    padding: 2px 7px;
+    padding: 3px 7px;
 }
 
 .social-bar-container li i:hover {
