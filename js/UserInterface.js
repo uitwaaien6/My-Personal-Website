@@ -6,22 +6,25 @@ class UserInterface {
         this.switcher = true;
     }
 
-    eventListeners(switcher) {
+    static eventListeners(switcher) {
 
         $('#ruzgar-ata-ozkan').click(function() {
-            location.reload();
+            location.reload('../index.html');
         });
 
         // navigaton dropdown menu slider sandvic button
         $('#nav-button').click(function() {
-            if (!switcher) {
-                $('.dropdown').css('display', 'none');
-                $('.dropdown').children().css('display','none');
-                switcher = !switcher;
-            } else if (switcher) {
-                $('.dropdown').css('display','block');
-                switcher = !switcher;
-                $('.dropdown').children().css('display', 'block');
+            switch (switcher) {
+                case false:
+                    $('.dropdown').css('display', 'none');
+                    $('.dropdown').children().css('display','none');
+                    switcher = !switcher;
+                    break;
+                case true:
+                    $('.dropdown').css('display','block');
+                    $('.dropdown').children().css('display', 'block');
+                    switcher = !switcher;    
+                    break;
             }
         });
 
@@ -32,31 +35,33 @@ class UserInterface {
     }
 
     // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
-    updateNavBar(switcher) {
+    static updateNavBar(switcher) {
         $(window).resize(function() {
             if (window.innerWidth >= 992) {
                 $('.dropdown').css('display', 'inline-block');
                 $('.dropdown').children().css('display', 'inline-block');
             }
             else if (window.innerWidth < 991) {
-                if (!switcher) {
-                    $('.dropdown').css('display', 'block');
-                    $(".dropdown").children().css("display", "block");
-                }
-                if (switcher) {
-                    $('.dropdown').css('display', 'none');
-                    $('.dropdown').children().css('display', 'none');
+                switch (switcher) {
+                    case true:
+                        $('.dropdown').css('display', 'none');
+                        $('.dropdown').children().css('display', 'none');
+                        break;
+                    case false:
+                        $('.dropdown').css('display', 'block');
+                        $(".dropdown").children().css("display", "block");
+                        break;
                 }
             }
         });
     }
 }
 
-const userInterface = new UserInterface();
+
 
 (() => {
-    console.log('Application has started');
-    userInterface.eventListeners(userInterface.switcher);
-    userInterface.updateNavBar(userInterface.switcher);
+    let switcher = true;
+    UserInterface.eventListeners(switcher);
+    UserInterface.updateNavBar(switcher);
 })();
 
