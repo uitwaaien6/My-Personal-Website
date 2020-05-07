@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 class UserInterface {
 
@@ -8,12 +8,12 @@ class UserInterface {
 
     static eventListeners(switcher) {
 
-        $('#ruzgar-ata-ozkan').click(function() {
+        $('#ruzgar-ata-ozkan').click(() => {
             location.reload('../index.html');
         });
 
         // navigaton dropdown menu slider sandvic button
-        $('#nav-button').click(function() {
+        $('#nav-button').click(() => {
             switch (switcher) {
                 case false:
                     $('.dropdown').css('display', 'none');
@@ -29,14 +29,19 @@ class UserInterface {
         });
 
         // read more scroll down listener
-        $(".read-more > .read-more-text").on("click", function() {
-            window.scrollTo(window.innerHeight, 0);
+        $('.read-more > .read-more-text').on('click', () => {
+            const windowHeight = window.innerHeight;
+            window.scrollTo({
+                left: 0,
+                top: windowHeight,
+                behavior: 'smooth'
+            });
         });
     }
 
     // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
     static updateNavBar(switcher) {
-        $(window).resize(function() {
+        $(window).resize(() => {
             if (window.innerWidth >= 992) {
                 $('.dropdown').css('display', 'inline-block');
                 $('.dropdown').children().css('display', 'inline-block');
