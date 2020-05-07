@@ -29,7 +29,7 @@ class UserInterface {
         });
 
         // read more scroll down listener
-        $('.read-more > .read-more-text').on('click', () => {
+        $('.read-more > .read-more-text').click(() => {
             const windowHeight = window.innerHeight;
             window.scrollTo({
                 left: 0,
@@ -62,11 +62,8 @@ class UserInterface {
     }
 }
 
-
-
 (() => {
     let switcher = true;
     UserInterface.eventListeners(switcher);
     UserInterface.updateNavBar(switcher);
 })();
-
