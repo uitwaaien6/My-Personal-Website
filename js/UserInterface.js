@@ -40,10 +40,20 @@ class UserInterface {
     }
 
     // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
-    static updateNavBar(switcher, minifyHeader) {
+    static updateNavBar(switcher) {
 
         //minify header or not, if the page y pos greater than 30 will add the class or will remove it
-        
+
+        function minifyHeader() {
+            const pageYPos = window.pageYOffset;
+            if (pageYPos > 30) {
+                $('header').addClass('header-scroll');
+                $('.global-nav').find('a').css('color', 'black');
+            } else if (pageYPos < 30 && window.innerWidth >= 992) {
+                $('header').removeClass('header-scroll');
+                $('.global-nav').find('a').css('color', 'white');
+            }
+        }
 
         $(window).scroll(() => {
             minifyHeader();
@@ -75,18 +85,6 @@ class UserInterface {
 (() => {
     let switcher = true;
 
-    function minifyHeader() {
-        const pageYPos = window.pageYOffset;
-        if (pageYPos > 30) {
-            $('header').addClass('header-scroll');
-            $('.global-nav').find('a').css('color', 'black');
-        } else if (pageYPos < 30 && window.innerWidth >= 992) {
-            $('header').removeClass('header-scroll');
-            $('.global-nav').find('a').css('color', 'white');
-        }
-    }
-
     UserInterface.eventListeners(switcher);
-    UserInterface.updateNavBar(switcher, minifyHeader);
+    UserInterface.updateNavBar(switcher);
 })();
-
