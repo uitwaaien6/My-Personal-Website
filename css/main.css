@@ -146,40 +146,41 @@ header {
 }
 
 .about-me {
-    width: 60%;
+    width: 65%;
     position: relative;
-    left: 20%;
-    border: 1px solid white;
+    left: 17%;
 }
 
 .about-me-title {
     padding-top: 50px;
-
     letter-spacing: 3px;
 }
 
 .about-me-content {
     padding-top: 50px;
-
     letter-spacing: 1.5px;
 }
 
 .about-me-table {
     padding-top: 50px;
+    padding-left: 100px;
 }
 
 .about-me-table-row {
+    padding-right: 100px;
     display: inline-block;
-    padding-right: 60px;
     transition: all 0.3s ease-in-out;
+}
+
+.about-me-table-row li {
+    padding: 3px 0px;
+    font-size: 0.9em;
 }
 
 @media only screen and (max-width: 1500px) {
     #contact-me {
         margin-left: 25rem;
     }
-
-
 }
 
 @media only screen and (max-width: 1300px) {
@@ -231,7 +232,7 @@ header {
 
     #nav-button {
         display: block;
-        left: 70%;
+        right: 5%;
     }
 
     .read-more {
