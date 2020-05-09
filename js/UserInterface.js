@@ -50,31 +50,30 @@ class UserInterface {
         });
     }
 
+    //minify header or not, if the page y pos greater than 30 will add the class or will remove it
+    static minifyHeader() {
+        const pageYPos = window.pageYOffset;
+        if (pageYPos > 70) {
+            $('header').addClass('header-scroll');
+            $('.global-nav').find('a').css('color', 'black');
+        } else if (pageYPos < 70 && window.innerWidth >= 992) {
+            $('header').removeClass('header-scroll');
+            $('.global-nav').find('a').css('color', 'white');
+        }
+    }
+
     // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
     static updateNavBar(switcher) {
 
-        //minify header or not, if the page y pos greater than 30 will add the class or will remove it
-
-        function minifyHeader() {
-            const pageYPos = window.pageYOffset;
-            if (pageYPos > 70) {
-                $('header').addClass('header-scroll');
-                $('.global-nav').find('a').css('color', 'black');
-            } else if (pageYPos < 70 && window.innerWidth >= 992) {
-                $('header').removeClass('header-scroll');
-                $('.global-nav').find('a').css('color', 'white');
-            }
-        }
-
         $(window).scroll(() => {
-            minifyHeader();
+            this.minifyHeader();
         });
 
         $(window).resize(() => {
             if (window.innerWidth >= 992) {
                 $('.dropdown').css('display', 'inline-block');
                 $('.dropdown').children().css('display', 'inline-block');
-                minifyHeader();
+                this.minifyHeader();
             }
             else if (window.innerWidth < 991) {
                 $('.global-nav').find('a').css('color', 'black');

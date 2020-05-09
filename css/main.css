@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
 }
 
 body {
@@ -178,14 +179,12 @@ header {
     font-size: 0.8em;
 }
 
-
 @media only screen and (max-width: 1500px) {
     #contact-me {
         margin-left: 25rem;
     }
 
 }
-
 
 @media only screen and (max-width: 1300px) {
     #contact-me {
@@ -196,9 +195,11 @@ header {
         left: 25%;
     }
 
+    .about-me-table-row {
+        margin: 0px 20px;
+    }
  
 }
-
 
 @media only screen and (max-width: 1100px) {
 
