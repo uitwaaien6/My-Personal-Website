@@ -2,17 +2,18 @@
 
 class API {
     constructor() {
-
+        this.githubURL = 'https://api.github.com/users/uitwaaien6/repos';
     }
 
-    getAPI(url) {
+    static getAPI(url) {
         $.get(url, () => {
-            console.log('Fetching url');
+            console.log('Fetching specified url...');
         }).done((data) => {
             console.log('Fetching url done.');
             console.log(data);
-        }).fail(() => {
-            console.log('Could not fetch the specified url.');
+        }).fail((error) => {
+            console.log(error);
         });
     }
 }
+

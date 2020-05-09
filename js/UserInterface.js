@@ -24,6 +24,7 @@ class UserInterface {
                     $('.dropdown').css('display','block');
                     $('.dropdown').children().css('display', 'block');
                     switcher = !switcher;    
+                    //FUCKING MORONS
                     break;
             }
         });
@@ -31,9 +32,19 @@ class UserInterface {
         // read more scroll down listener
         $('.read-more > .read-more-text').click(() => {
             const windowHeight = window.innerHeight;
+            const headerHeight = $('header').find('li').css('height');
+            let scrollPos;
+            let extractedVal;
+            for (let i = 0; i < headerHeight.length; i++) {
+                const str = headerHeight.substr(0, i);
+                if (!isNaN(str) || str == '.') {
+                    extractedVal = str;
+                } 
+            }
+            scrollPos = windowHeight - extractedVal;
             window.scrollTo({
                 left: 0,
-                top: windowHeight,
+                top: scrollPos,
                 behavior: 'smooth'
             });
         });
