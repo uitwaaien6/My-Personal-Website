@@ -8,9 +8,9 @@ class UserInterface {
 
     static eventListeners(switcher) {
 
-        $('#ruzgar-ata-ozkan').click(() => {
-            location.reload('../index.html');
-        });
+        $(window).ready(() => this.minifyHeader());
+
+        $('#ruzgar-ata-ozkan').click(() => location.reload('../index.html'));
 
         // navigaton dropdown menu slider sandvic button
         $('#nav-button').click(() => {
@@ -48,6 +48,14 @@ class UserInterface {
                 behavior: 'smooth'
             });
         });
+
+        $('#footer-nav-home').click(() => {
+            window.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: 'smooth'
+            });
+        })
     }
 
     //minify header or not, if the page y pos greater than 30 will add the class or will remove it
@@ -65,9 +73,7 @@ class UserInterface {
     // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
     static updateNavBar(switcher) {
 
-        $(window).scroll(() => {
-            this.minifyHeader();
-        });
+        $(window).scroll(() => this.minifyHeader());
 
         $(window).resize(() => {
             if (window.innerWidth >= 992) {

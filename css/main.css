@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
 }
 
 body {
@@ -153,7 +152,7 @@ header {
 .about-me-title {
     padding-top: 40px;
     letter-spacing: 3px;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .about-me-content {
@@ -165,13 +164,19 @@ header {
 .about-me-table {
     padding-top: 40px;
     padding-bottom: 40px;
+    text-align: center;
 }
 
 .about-me-table-row {
     display: inline-block;
-    width: 20%;
-    margin: 0px 40px;
+    width: 200px;
+    margin: 0px 20px;
+    text-align: left;
     transition: all 0.3s ease-in-out;
+}
+
+.about-me-table-row ul {
+    padding-left: 18px;
 }
 
 .about-me-table-row li {
@@ -179,9 +184,72 @@ header {
     font-size: 0.8em;
 }
 
+footer {
+    width: 100%;
+    background-color: #242424;
+    color: white;
+}
+
+.footer h5 {
+    text-align: center;
+    padding-top: 75px;
+}
+
+.footer-social-bar {
+    padding: 35px 0;
+    text-align: center;
+}
+
+.footer-social-bar li {
+    display: inline-block;
+    font-size: 35px;
+    padding: 5px;
+}
+
+.footer-social-bar i {
+    color: white;
+}
+
+footer p {
+    padding: 50px 0 0 0;
+    letter-spacing: 1.5px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.footer-nav {
+    width: 100%;
+    background-color: #191919;
+    text-align: center;
+    margin: 0rem;
+}
+
+.footer-nav li {
+    display: inline-block;
+    padding: 20px 60px;
+}
+
 @media only screen and (max-width: 1500px) {
     #contact-me {
         margin-left: 25rem;
+    }
+
+    .about-me-table-row {
+        width: 200px;
+        margin: 0px 10px;
+    }
+
+    .about-me {
+        width: 70%;
+        left: 15%;
     }
 
 }
@@ -195,10 +263,10 @@ header {
         left: 25%;
     }
 
-    .about-me-table-row {
-        margin: 0px 20px;
+    .about-me {
+        width: 80%;
+        left: 10%;
     }
- 
 }
 
 @media only screen and (max-width: 1100px) {
@@ -242,5 +310,6 @@ header {
     .read-more {
         left: 35%;
     }
+
 
 }
