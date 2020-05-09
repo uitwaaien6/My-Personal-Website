@@ -46,10 +46,10 @@ class UserInterface {
 
         function minifyHeader() {
             const pageYPos = window.pageYOffset;
-            if (pageYPos > 30) {
+            if (pageYPos > 70) {
                 $('header').addClass('header-scroll');
                 $('.global-nav').find('a').css('color', 'black');
-            } else if (pageYPos < 30 && window.innerWidth >= 992) {
+            } else if (pageYPos < 70 && window.innerWidth >= 992) {
                 $('header').removeClass('header-scroll');
                 $('.global-nav').find('a').css('color', 'white');
             }
