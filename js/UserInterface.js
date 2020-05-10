@@ -7,7 +7,6 @@ class UserInterface {
     }
 
     static eventListeners(switcher) {
-
         $(window).ready(() => this.minifyHeader());
 
         $('#ruzgar-ata-ozkan').click(() => location.reload('../index.html'));
@@ -30,31 +29,23 @@ class UserInterface {
         });
 
         // read more scroll down listener
-        $('.read-more > .read-more-text').click(() => {
-            const windowHeight = window.innerHeight;
-            const headerHeight = $('header').find('li').css('height');
-            let scrollPos;
-            let extractedVal;
-            for (let i = 0; i < headerHeight.length; i++) {
-                const str = headerHeight.substr(0, i);
-                if (!isNaN(str) || str == '.') {
-                    extractedVal = str;
-                }
+        $('.read-more-text').click(() => {
+            const window_height = window.innerHeight;
+            const header_height = $('header').find('li').css('height');
+            let scroll;
+            let extracted_val;
+            for (let i = 0; i < header_height.length; i++) {
+                const str = header_height.substr(0, i);
+                if (!isNaN(str) || str == '.') { extracted_val = str; }
             }
-            scrollPos = windowHeight - extractedVal;
-            window.scrollTo({
-                left: 0,
-                top: scrollPos,
-                behavior: 'smooth'
-            });
+            const scroll_top_pos = window_height - parseFloat(extracted_val);
+            scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' }
+            window.scrollTo(scroll);
         });
 
         $('#footer-nav-home').click(() => {
-            window.scrollTo({
-                left: 0,
-                top: 0,
-                behavior: 'smooth'
-            });
+            const scroll = { left: 0, top: 0, behavior: 'smooth' }
+            window.scrollTo(scroll);
         })
     }
 
@@ -98,10 +89,8 @@ class UserInterface {
     }
 }
 
-(() => {
+$(window).ready(() => {
     let switcher = true;
-
     UserInterface.eventListeners(switcher);
     UserInterface.updateNavBar(switcher);
-})();
-
+});

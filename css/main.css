@@ -261,7 +261,7 @@ footer a:hover {
 
 .footer-nav li {
     display: inline-block;
-    padding: 40px 80px;
+    padding: 30px 80px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -359,8 +359,6 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 650px) {
-
-
     .footer-nav li {
         padding: 20px 5px;
     }
