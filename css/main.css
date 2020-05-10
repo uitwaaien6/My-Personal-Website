@@ -28,6 +28,7 @@ header {
     list-style: none;
     position: relative;
     left: 15%;
+    transition: all 0.2s ease-in-out;
 }
 
 .global-nav ul {
@@ -74,6 +75,7 @@ header {
     font-size: 35px;
     font-weight: 100;
     padding: 3px;
+    cursor: pointer;
 }
 
 #contact-me {
@@ -96,13 +98,16 @@ header {
 
 .home-title {
     color: white;
-    font-weight: 500;
-    letter-spacing: 19px;
+    letter-spacing: 17px;
+    font-size: 35px;
+    font-weight: normal;
 }
 
 .home-subtitle {
     color: white;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
+    font-size: 20px;
+    font-weight: normal;
 }
 
 .social-bar-container {
@@ -111,7 +116,7 @@ header {
 }
 
 .social-bar-container li {
-    padding: 3px 7px;
+    padding: 5px 7px;
 }
 
 .social-bar-container li i:hover {
@@ -130,6 +135,10 @@ header {
     text-align: center;
     color: white;
     font-size: 30px;
+}
+
+.read-more div {
+    padding: 5px;
 }
 
 .read-more .read-more-text {
@@ -152,36 +161,42 @@ header {
 .about-me-title {
     padding-top: 40px;
     letter-spacing: 3px;
-    font-size: 1.3em;
+    font-weight: normal;
 }
 
 .about-me-content {
     padding-top: 40px;
     letter-spacing: 1.5px;
-    font-size: 0.9em;
+    line-height: 1.5rem;
 }
 
 .about-me-table {
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     text-align: center;
 }
 
 .about-me-table-row {
     display: inline-block;
-    width: 200px;
-    margin: 0px 20px;
+    width: 220px;
+    margin: 0px 10px;
     text-align: left;
     transition: all 0.3s ease-in-out;
 }
 
+.about-me-table-row h4{
+    letter-spacing: 1px;
+}
+
 .about-me-table-row ul {
-    padding-left: 18px;
+    padding-left: 15px;
+    padding-top: 5px;
 }
 
 .about-me-table-row li {
     padding: 3px 0px;
     font-size: 0.8em;
+    line-height: 1.2rem;
 }
 
 footer {
@@ -190,14 +205,19 @@ footer {
     color: white;
 }
 
-.footer h5 {
+.footer-title-social-bar-inspired-container {
+    padding: 50px 0;
     text-align: center;
-    padding-top: 75px;
+    letter-spacing: 1.5px;
 }
 
-.footer-social-bar {
-    padding: 35px 0;
-    text-align: center;
+.footer-title-social-bar-inspired-container div {
+    padding: 25px 0;
+}
+
+.footer h2 {
+    font-weight: normal;
+    letter-spacing: 1.5px;
 }
 
 .footer-social-bar li {
@@ -208,11 +228,6 @@ footer {
 
 .footer-social-bar i {
     color: white;
-}
-
-footer p {
-    padding: 50px 0 0 0;
-    letter-spacing: 1.5px;
 }
 
 footer a {
@@ -229,12 +244,13 @@ footer a:hover {
     width: 100%;
     background-color: #191919;
     text-align: center;
-    margin: 0rem;
+    
 }
 
 .footer-nav li {
     display: inline-block;
-    padding: 20px 60px;
+    padding: 40px 80px;
+    transition: all 0.2s ease-in-out;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -242,14 +258,10 @@ footer a:hover {
         margin-left: 25rem;
     }
 
-    .about-me-table-row {
-        width: 200px;
-        margin: 0px 10px;
-    }
-
     .about-me {
         width: 70%;
-        left: 15%;
+        position: relative;
+        left: 17%;
     }
 
 }
@@ -264,12 +276,21 @@ footer a:hover {
     }
 
     .about-me {
-        width: 80%;
-        left: 10%;
+        width: 75%;
+        position: relative;
+        left: 14%;
+    }
+
+    .about-me-table-row {
+        margin: 0px 10px;
     }
 }
 
 @media only screen and (max-width: 1100px) {
+
+    .global-nav {
+        left: 10%;
+    }
 
     #contact-me {
         margin-left: 14rem;
@@ -277,6 +298,10 @@ footer a:hover {
 
     .home-title-div {
         left: 20%;
+    }
+
+    .footer-nav li {
+        padding: 20px 40px;
     }
 }
 
@@ -311,5 +336,20 @@ footer a:hover {
         left: 35%;
     }
 
+    .about-me-table-row {
+        display: block;
+        margin: 40px 0px;
+    }
 
+    .footer-nav li {
+        padding: 20px 20px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+
+
+    .footer-nav li {
+        padding: 20px 5px;
+    }
 }

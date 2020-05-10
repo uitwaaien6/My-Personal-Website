@@ -39,7 +39,7 @@ class UserInterface {
                 const str = headerHeight.substr(0, i);
                 if (!isNaN(str) || str == '.') {
                     extractedVal = str;
-                } 
+                }
             }
             scrollPos = windowHeight - extractedVal;
             window.scrollTo({
