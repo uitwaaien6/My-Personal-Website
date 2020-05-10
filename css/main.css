@@ -12,6 +12,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
     display: flex;
     align-items: center;
     padding: 40px 10px;
@@ -200,6 +201,16 @@ header {
     line-height: 1.2rem;
 }
 
+/* POPULAR REPOS SECTION */
+.popular-repos-container {
+    width: 100%;
+}
+
+.popular-repos {
+    text-align: center;
+}
+
+/* footer section */
 footer {
     width: 100%;
     background-color: #242424;
@@ -207,13 +218,13 @@ footer {
 }
 
 .footer-title-social-bar-inspired-container {
-    padding: 50px 0;
+    padding: 80px 0;
     text-align: center;
     letter-spacing: 1.5px;
 }
 
 .footer-title-social-bar-inspired-container div {
-    padding: 25px 0;
+    padding: 15px 0;
 }
 
 .footer h2 {
@@ -224,7 +235,7 @@ footer {
 .footer-social-bar li {
     display: inline-block;
     font-size: 35px;
-    padding: 5px;
+    padding: 4px;
 }
 
 .footer-social-bar i {

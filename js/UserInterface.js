@@ -104,3 +104,4 @@ class UserInterface {
     UserInterface.eventListeners(switcher);
     UserInterface.updateNavBar(switcher);
 })();
+
