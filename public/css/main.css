@@ -95,13 +95,13 @@ header {
 .home-title-div {
     position: absolute;
     top: 45%;
-    left: 33%;
+    left: 32%;
 }
 
 .home-title {
     color: white;
     letter-spacing: 17px;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: normal;
     padding: 5px 0;
 }
@@ -249,47 +249,6 @@ footer {
     transition: all 0.2s ease-in-out;
 }
 
-.footer-social-bar .fa-github-square:hover {
-    color: #F4CBB2;
-}
-
-.footer-social-bar .fa-facebook-square:hover {
-    color: #4267B2;
-}
-
-.footer-social-bar .fa-instagram-square:hover {
-    /*background: linear-gradient(135deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C,  #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);*/
-    color: #F77737;
-}
-
-.footer-social-bar .fa-twitter-square:hover {
-    color: #1DA1F2;
-}
-
-.footer-social-bar .fa-snapchat-square:hover {
-    color: #FFFC00;
-}
-
-.footer-social-bar .fa-youtube-square:hover {
-    color: #FF0000;
-}
-
-.footer-social-bar .fa-linkedin:hover {
-    color: #2867B2;
-}
-
-.footer-social-bar .fa-reddit-square:hover {
-    color: #FF4500;
-}
-
-.footer-social-bar .fa-envelope-square:hover {
-    color: #D44638;
-}
-
-.footer-social-bar .fa-discord:hover {
-    color: #7289DA;
-}
-
 .footer-inspired {
     padding: 20px;
     text-align: center;
@@ -394,7 +353,7 @@ footer a:hover {
         display: none;
     }
 
-    .dropdown div {
+    .dropdown li {
         display: block;
     }
 

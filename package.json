@@ -1,0 +1,24 @@
+{
+  "name": "my-personal-website",
+  "version": "1.0.0",
+  "description": "json package of my personal website, Ruzgar Ata Ozkan",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uitwaaien6/My-Personal-Website.git"
+  },
+  "keywords": [
+    "Serverside",
+    "programming",
+    "full-stack"
+  ],
+  "author": "Ruzgar Ata Ozkan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uitwaaien6/My-Personal-Website/issues"
+  },
+  "homepage": "https://github.com/uitwaaien6/My-Personal-Website#readme"
+}
