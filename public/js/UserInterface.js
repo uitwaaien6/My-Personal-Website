@@ -37,7 +37,7 @@ class UserInterface {
                 const str = header_height.substr(0, i);
                 if (!isNaN(str) || str == '.') { extracted_val = str; }
             }
-            const scroll_top_pos = window_height - parseFloat(extracted_val);
+            const scroll_top_pos = window_height - parseFloat(extracted_val) - 10; // decreasing 10 px as well because we set the padding of the header-scroll class 10 px
             const scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' }
             window.scrollTo(scroll);
         });

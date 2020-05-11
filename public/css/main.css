@@ -21,7 +21,7 @@ header {
 }
 
 .header-scroll {
-    padding: 0px 10px;
+    padding: 5px 10px;
     background-color: white;
 }
 
@@ -55,6 +55,7 @@ header {
     text-decoration: none;
     color: white;
     letter-spacing: 1px;
+    font-size: 1.1rem;
 }
 
 .global-nav ul li:hover {
@@ -94,13 +95,13 @@ header {
 .home-title-div {
     position: absolute;
     top: 45%;
-    left: 30%;
+    left: 33%;
 }
 
 .home-title {
     color: white;
     letter-spacing: 17px;
-    font-size: 35px;
+    font-size: 2.2rem;
     font-weight: normal;
     padding: 5px 0;
 }
@@ -108,7 +109,7 @@ header {
 .home-subtitle {
     color: white;
     letter-spacing: 5px;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: normal;
 }
 
@@ -117,17 +118,17 @@ header {
     top: 45%;
 }
 
-.social-bar-container li {
+.social-bar li {
     padding: 5px 7px;
-}
-
-.social-bar-container li i:hover {
-    cursor: pointer;
 }
 
 .social-bar i {
     color: white;
-    font-size: 23px;
+    font-size: 1.5rem;
+}
+
+.social-bar li i:hover {
+    cursor: pointer;
 }
 
 .read-more {
@@ -136,7 +137,7 @@ header {
     left: 45%;
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .read-more div {
@@ -164,12 +165,14 @@ header {
     padding-top: 40px;
     letter-spacing: 3px;
     font-weight: normal;
+    font-size: 1.7rem;
 }
 
 .about-me-content {
     padding-top: 40px;
     letter-spacing: 1.5px;
     line-height: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .about-me-table {
@@ -188,6 +191,7 @@ header {
 
 .about-me-table-row h4{
     letter-spacing: 1px;
+    font-size: 1.2rem;
 }
 
 .about-me-table-row ul {
@@ -197,7 +201,7 @@ header {
 
 .about-me-table-row li {
     padding: 3px 0px;
-    font-size: 0.8em;
+    font-size: 0.9em;
     line-height: 1.2rem;
 }
 
@@ -230,6 +234,7 @@ footer {
 .footer h2 {
     font-weight: normal;
     letter-spacing: 1.5px;
+    font-size: 1.7rem;
 }
 
 .footer-social-bar li {
@@ -240,6 +245,11 @@ footer {
 
 .footer-social-bar i {
     color: white;
+    font-size: 2.4rem;
+}
+
+.footer-inspired p {;
+    font-size: 1.1rem;
 }
 
 footer a {
@@ -262,6 +272,7 @@ footer a:hover {
 .footer-nav li {
     display: inline-block;
     padding: 30px 80px;
+    font-size: 1.1rem;
     transition: all 0.2s ease-in-out;
 }
 
