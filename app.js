@@ -3,11 +3,9 @@
 const express = require('express');
 const app = express();
 
+app.listen(3000, () => console.log('Listening at 3000'));
+app.use(express.static('public'));
 
-app.listen(5500, () => {
-    console.log('I got a request');
-});
-
-app.get('/api', (req, res) => {
-    console.log(req);
+app.post('/api', (req, res) => {
+    console.log(req.body);
 });
