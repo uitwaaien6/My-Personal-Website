@@ -32,21 +32,20 @@ class UserInterface {
         $('.read-more-text').click(() => {
             const window_height = window.innerHeight;
             const header_height = $('header').find('li').css('height');
-            let scroll;
             let extracted_val;
             for (let i = 0; i < header_height.length; i++) {
                 const str = header_height.substr(0, i);
                 if (!isNaN(str) || str == '.') { extracted_val = str; }
             }
             const scroll_top_pos = window_height - parseFloat(extracted_val);
-            scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' }
+            const scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' }
             window.scrollTo(scroll);
         });
 
         $('#footer-nav-home').click(() => {
             const scroll = { left: 0, top: 0, behavior: 'smooth' }
             window.scrollTo(scroll);
-        })
+        });
     }
 
     //minify header or not, if the page y pos greater than 30 will add the class or will remove it
@@ -94,3 +93,4 @@ $(window).ready(() => {
     UserInterface.eventListeners(switcher);
     UserInterface.updateNavBar(switcher);
 });
+
