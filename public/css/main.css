@@ -170,7 +170,7 @@ header {
 
 .about-me-content {
     padding-top: 40px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.3px;
     line-height: 1.5rem;
     font-size: 1.1rem;
 }
@@ -208,10 +208,12 @@ header {
 /* POPULAR REPOS SECTION */
 .popular-repos-container {
     width: 100%;
+    background-color: white;
+
 }
 
 .popular-repos {
-    text-align: center;
+    position: relative;
 }
 
 /* footer section */
@@ -281,6 +283,7 @@ footer a:hover {
     padding: 30px 80px;
     font-size: 1.1rem;
     transition: all 0.2s ease-in-out;
+    letter-spacing: 1.1px;
 }
 
 @media only screen and (max-width: 1500px) {
