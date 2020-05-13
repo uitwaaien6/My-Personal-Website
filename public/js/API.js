@@ -6,37 +6,20 @@ $(window).ready(() => {
             
         }
 
-        static calcStarCount(res) {
+        static findPopularRepos(res) {
             let max_int = Number.MIN_SAFE_INTEGER; //readonly
-            let stars = [];
-            let configured_stars = [];
-            let high_stars = [];
-            const repos_length = res.length;
-            for (let i = 0; i < repos_length ; i++) {
-                stars[i] = res[i].stargazers_count;
-            }
-            
-            stars.forEach(e => {
-                if (e >= max_int) {
-                    configured_stars.push(e);
-                    max_int = e;
+            let repos = [];
+            let popular_repos = [];
+            res.forEach(e => {
+                if (e.stargazers_count >= max_int) {
+                    repos.push(e);
+                    max_int = e.stargazers_count;
                 }
             });
-
-            for (let i = configured_stars.length; i >= configured_stars.length - 3; i--) {
-                if (configured_stars[i] == undefined || configured_stars[i] == null) {
-                    continue;
-                } else {
-                    configured_stars[i];
-                }
+            for (let i = repos.length - 1; i >= (repos.length - 3); i--) {
+                popular_repos.push(repos[i]);
             }
-
-            for (let i = 0; i < configured_stars.length; i++) {
-                high_stars[i] = configured_stars[i];
-            }
-
-            // Returns an array of the highest 3 stars on repos
-            return high_stars;
+            return popular_repos; // returns an array of the repos with the highest stars, starts with the highest and decreases as the index goes.
         }
 
         static async fetchGithub() {
@@ -44,8 +27,7 @@ $(window).ready(() => {
             $.get(url, () => {
                 console.log('Fetching github...');
             }).done((res) => {
-
-                console.log(this.calcStarCount(res));
+                console.log(this.findPopularRepos(res)[0]);
             }).fail((err) => {
                 console.log(err);
             });
