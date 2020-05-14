@@ -27,7 +27,7 @@ $(window).ready(() => {
             $.get(url, () => {
                 console.log('Fetching github...');
             }).done((res) => {
-                console.log(this.findPopularRepos(res)[0]);
+                console.log(this.findPopularRepos(res));
             }).fail((err) => {
                 console.log(err);
             });
