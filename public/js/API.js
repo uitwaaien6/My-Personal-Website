@@ -27,7 +27,18 @@ $(window).ready(() => {
             $.get(url, () => {
                 console.log('Fetching github...');
             }).done((res) => {
-                console.log(this.findPopularRepos(res));
+                const popular_repos = this.findPopularRepos(res);
+                const popular_projects_ids = ['.popular-repos-table-first-repo', '.popular-repos-table-second-repo', '.popular-repos-table-third-repo'];
+
+                console.log(popular_repos);
+
+                for (let i = 0; i < popular_projects_ids.length; i++) {
+                    $(`${popular_projects_ids[i]}`).find('td')[0].text(popular_repos[i].name);
+                    $(`${popular_projects_ids[i]} td`)[1].text(popular_repos[i].description);
+                    $(`${popular_projects_ids[i]} td`)[2].text(popular_repos[i].language);
+                    $(`${popular_projects_ids[i]} td`)[3].text(popular_repos[i].stargazers_count);
+                }
+                
             }).fail((err) => {
                 console.log(err);
             });
@@ -49,5 +60,9 @@ $(window).ready(() => {
 
 
     API.fetchGithub();
+
+
+    
+    
 });
 
