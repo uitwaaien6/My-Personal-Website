@@ -215,29 +215,36 @@ header {
     position: relative;
     left: 20%;
     width: 60%;
-    padding: 20px;
-    border: 1px solid black;
+    padding: 40px 0;
+    font-size: 1.1rem;
+    transition: all 0.2s ease-in-out;
 }
 
-.popular-repos h2 {
+.popular-repos h3 {
     font-weight: normal;
-    padding: 2rem 0;
+    padding-bottom: 2rem;
 }
 
-.popular-repos-table {
-    border: 1px solid black;
+.popular-repos table a {
+    color: black;
+    text-decoration: none;
 }
 
-.popular-repos-table-titles td {
+.popular-repos table a:hover {
+    text-decoration: underline;
+}
+
+.popular-repos table thead td {
+    border-bottom: 2px solid rgb(175, 175, 175);
     font-weight: bold;
 }
 
-.popular-repos-table td {
-    padding: 10px;
-    border: 1px solid black;
+.popular-repos td {
+    padding: 0.9rem 0.8rem;
     letter-spacing: 0.2px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    min-width: 10rem;
 }
-
 
 /* footer section */
 footer {
@@ -247,7 +254,7 @@ footer {
 }
 
 .footer-title-social-bar-inspired-container {
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
     letter-spacing: 1.5px;
 }
@@ -256,10 +263,9 @@ footer {
     padding: 15px 0;
 }
 
-.footer h2 {
+.footer h3 {
     font-weight: normal;
     letter-spacing: 1.5px;
-    font-size: 1.7rem;
 }
 
 .footer-social-bar li {
@@ -340,6 +346,10 @@ footer a:hover {
     .about-me-table-row {
         margin: 0px 10px;
     }
+
+    .popular-repos {
+        left: 10%;
+    }
 }
 
 @media only screen and (max-width: 1100px) {
@@ -356,9 +366,20 @@ footer a:hover {
         left: 20%;
     }
 
+    .popular-repos {
+        width: 100%;
+        max-width: 100%;
+        left: 0%;
+    }
+
+    .popular-repos td {
+        min-width: 0px;
+    }
+
     .footer-nav li {
         padding: 20px 40px;
     }
+
 }
 
 @media only screen and (max-width: 990px) {
@@ -397,6 +418,10 @@ footer a:hover {
         margin: 40px 0px;
     }
 
+    .popular-repos td {
+        padding: 0.3rem 0.2rem;
+    }
+
     .footer-nav li {
         padding: 20px 20px;
     }
@@ -405,5 +430,9 @@ footer a:hover {
 @media only screen and (max-width: 650px) {
     .footer-nav li {
         padding: 20px 5px;
+    }
+
+    .popular-repos td {
+        max-width: 200px;
     }
 }
