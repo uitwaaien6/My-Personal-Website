@@ -56,9 +56,11 @@ $(window).ready(() => {
             if (pageYPos > 70) {
                 $('header').addClass('header-scroll');
                 $('.global-nav').find('a').css('color', 'black');
+                $('.global-nav').find('li').css('padding', '20px 20px');
             } else if (pageYPos < 70 && window.innerWidth >= 992) {
                 $('header').removeClass('header-scroll');
                 $('.global-nav').find('a').css('color', 'white');
+                $('.global-nav').find('li').css('padding', '15px 20px');
             }
         }
     

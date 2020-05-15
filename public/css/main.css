@@ -21,7 +21,7 @@ header {
 }
 
 .header-scroll {
-    padding: 5px 10px;
+    padding: 0px 10px;
     background-color: white;
 }
 
@@ -55,7 +55,7 @@ header {
     text-decoration: none;
     color: white;
     letter-spacing: 1px;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .global-nav ul li:hover {
@@ -124,7 +124,7 @@ header {
 
 .social-bar i {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .social-bar li i:hover {
@@ -236,6 +236,7 @@ header {
 
 .popular-repos table thead td {
     border-bottom: 2px solid rgb(175, 175, 175);
+    border-radius: 0.5px;
     font-weight: bold;
 }
 
@@ -243,6 +244,7 @@ header {
     padding: 0.9rem 0.8rem;
     letter-spacing: 0.2px;
     border-bottom: 1px solid rgb(221, 221, 221);
+    border-radius: 0.5px;
     min-width: 10rem;
 }
 

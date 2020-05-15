@@ -26,7 +26,6 @@ $(window).ready(() => {
             const url = 'https://api.github.com/users/uitwaaien6/repos';
             $.get('/', () => {
 
-
             }).done((res) => {
                 
                 /*const popular_repos = this.findPopularRepos(res);
