@@ -50,10 +50,6 @@ $(window).ready(() => {
                 window.scrollTo(scroll);
             });
     
-            $('#footer-nav-home').click(() => {
-                const scroll = { left: 0, top: 0, behavior: 'smooth' }
-                window.scrollTo(scroll);
-            });
         }
     
         //minify header or not, if the page y pos greater than 30 will add the class or will remove it

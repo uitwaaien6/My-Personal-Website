@@ -30,5 +30,7 @@ $(window).ready(() => {
             });
         }
     }
+
+    API.fetchGithub();
     
 });
