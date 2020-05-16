@@ -34,13 +34,24 @@ $(window).ready(() => {
             $('.read-more-text').click(() => {
                 const window_height = window.innerHeight;
                 const header_height = $('header').find('li').css('height');
+                console.log(header_height);
                 let extracted_val;
                 for (let i = 0; i < header_height.length; i++) {
                     const str = header_height.substr(0, i);
                     if (!isNaN(str) || str == '.') { extracted_val = str; }
                 }
-                const scroll_top_pos = window_height - parseFloat(extracted_val) - 10; // decreasing 10 px as well because we set the padding of the .header-scroll class 10 px
-                const scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' }
+
+                let scroll_top_pos;
+                let scroll; 
+
+                if ($('header').hasClass('header-scroll')) {
+                    scroll_top_pos = window_height - parseFloat(extracted_val);
+                    scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' };
+                } else {
+                    scroll_top_pos = window_height - parseFloat(extracted_val) - 10;
+                    scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' };
+                }
+
                 window.scrollTo(scroll);
             });
     
@@ -67,7 +78,10 @@ $(window).ready(() => {
         // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
         static updateNavBar(switcher) {
     
-            $(window).scroll(() => this.minifyHeader());
+            $(window).scroll(() => { 
+                this.minifyHeader();
+                console.log('scrolling');
+             });
     
             $(window).resize(() => {
                 if (window.innerWidth >= 992) {
