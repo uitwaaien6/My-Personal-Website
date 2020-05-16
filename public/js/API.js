@@ -31,5 +31,4 @@ $(window).ready(() => {
         }
     }
     
-    API.fetchGithub();
 });

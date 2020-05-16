@@ -2,53 +2,10 @@
 
 $(window).ready(() => {
 
-    console.log(location);
-
     class UserInterface {
     
         static eventListeners(switcher) {
             $(window).ready(() => this.minifyHeader());
-    
-            // navigaton dropdown menu slider sandvic button
-            $('#nav-button').click(() => {
-                switch (switcher) {
-                    case false:
-                        $('.dropdown').css('display', 'none');
-                        $('.dropdown').children().css('display','none');
-                        switcher = !switcher;
-                        break;
-                    case true:
-                        $('.dropdown').css('display','block');
-                        $('.dropdown').children().css('display', 'block');
-                        switcher = !switcher;    
-                        //FUCKING MORONS
-                        break;
-                }
-            });
-    
-            // read more scroll down listener
-            $('.read-more-text').click(() => {
-                const window_height = window.innerHeight;
-                const header_height = $('header').find('li').css('height');
-                let extracted_val;
-                for (let i = 0; i < header_height.length; i++) {
-                    const str = header_height.substr(0, i);
-                    if (!isNaN(str) || str == '.') { extracted_val = str; }
-                }
-
-                let scroll_top_pos;
-                let scroll; 
-
-                if ($('header').hasClass('header-scroll')) {
-                    scroll_top_pos = window_height - parseFloat(extracted_val);
-                    scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' };
-                } else {
-                    scroll_top_pos = window_height - parseFloat(extracted_val) - 10;
-                    scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' };
-                }
-
-                window.scrollTo(scroll);
-            });
     
             $('#footer-nav-home').click(() => {
                 const scroll = { left: 0, top: 0, behavior: 'smooth' }
@@ -61,11 +18,9 @@ $(window).ready(() => {
             const pageYPos = window.pageYOffset;
             if (pageYPos > 70) { // todo will rearrenge the pathname later
                 $('header').addClass('header-scroll');
-                $('.global-nav').find('a').css('color', 'black');
                 $('.global-nav').find('a').css('padding', '20px 20px');
             } else if (pageYPos < 70 && window.innerWidth >= 992) {
                 $('header').removeClass('header-scroll');
-                $('.global-nav').find('a').css('color', 'white');
                 $('.global-nav').find('a').css('padding', '15px 20px');
             }
         }
@@ -82,7 +37,6 @@ $(window).ready(() => {
                     this.minifyHeader();
                 }
                 else if (window.innerWidth < 991) {
-                    $('.global-nav').find('a').css('color', 'black');
                     switch (switcher) {
                         case true:
                             $('.dropdown').css('display', 'none');

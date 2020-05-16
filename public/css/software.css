@@ -39,6 +39,7 @@ header {
 
 .dropdown {
     display: inline-block;
+    transition: all 0.2s ease-in-out;
 }
 
 .dropdown div {
@@ -47,15 +48,17 @@ header {
 
 .global-nav ul li {
     display: inline-block;
-    padding: 15px 20px;
     transition: all 0.3s ease-in;
 }
 
 .global-nav a {
+    padding: 15px 20px;
+    display: inline-block;
     text-decoration: none;
     color: black;
     letter-spacing: 1px;
     font-size: 1rem;
+    transition: all 0.3 ease-in-out;
 }
 
 .global-nav ul li:hover {
@@ -95,12 +98,12 @@ header {
     position: relative;
     left: 20%;
     width: 60%;
-    padding: 250px 0;
+    padding: 200px 0;
     font-size: 1.1rem;
     transition: all 0.2s ease-in-out;
 }
 
-.popular-repos h3 {
+.popular-repos h2{
     font-weight: normal;
     padding-bottom: 2rem;
 }
@@ -116,15 +119,13 @@ header {
 
 .popular-repos table thead td {
     border-bottom: 2px solid rgb(175, 175, 175);
-    border-radius: 0.5px;
     font-weight: bold;
 }
 
 .popular-repos td {
-    padding: 0.9rem 0.8rem;
+    padding: 0.5rem 0.4rem;
     letter-spacing: 0.2px;
-    border-bottom: 1px solid rgb(221, 221, 221);
-    border-radius: 0.5px;
+    border: 1px solid rgb(221, 221, 221);
     min-width: 10rem;
 }
 

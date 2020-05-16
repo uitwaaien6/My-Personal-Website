@@ -41,21 +41,19 @@ header {
     display: inline-block;
 }
 
-.dropdown div {
-    display: inline-block;
-}
-
 .global-nav ul li {
     display: inline-block;
-    padding: 15px 20px;
     transition: all 0.3s ease-in;
 }
 
 .global-nav a {
+    padding: 15px 20px;
+    display: inline-block;
     text-decoration: none;
     color: white;
     letter-spacing: 1px;
     font-size: 1rem;
+    transition: all 0.3s ease-in;
 }
 
 .global-nav ul li:hover {
