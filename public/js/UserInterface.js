@@ -3,10 +3,6 @@
 $(window).ready(() => {
 
     class UserInterface {
-
-        constructor() {
-            this.switcher = true;
-        }
     
         static eventListeners(switcher) {
             $(window).ready(() => this.minifyHeader());
@@ -34,7 +30,6 @@ $(window).ready(() => {
             $('.read-more-text').click(() => {
                 const window_height = window.innerHeight;
                 const header_height = $('header').find('li').css('height');
-                console.log(header_height);
                 let extracted_val;
                 for (let i = 0; i < header_height.length; i++) {
                     const str = header_height.substr(0, i);
@@ -78,10 +73,7 @@ $(window).ready(() => {
         // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
         static updateNavBar(switcher) {
     
-            $(window).scroll(() => { 
-                this.minifyHeader();
-                console.log('scrolling');
-             });
+            $(window).scroll(() => this.minifyHeader());
     
             $(window).resize(() => {
                 if (window.innerWidth >= 992) {

@@ -24,39 +24,16 @@ $(window).ready(() => {
 
         static async fetchGithub() {
             const url = 'https://api.github.com/users/uitwaaien6/repos';
-            $.get('/', () => {
-
-            }).done((res) => {
-                
-                /*const popular_repos = this.findPopularRepos(res);
-                const popular_projects_ids = ['.popular-repos-table-first-repo', '.popular-repos-table-second-repo', '.popular-repos-table-third-repo'];
-
-                for (let i = 0; i < popular_projects_ids.length; i++) {
-                    if (popular_repos[i] != undefined || popular_repos[i] != null) {
-                        $(`${popular_projects_ids[i]}`).find('a').text(popular_repos[i].name);
-                    }
-                }*/
-                
-            }).fail((err) => {
-                console.log(err);
+            $.get(url).done(data => {
+                const popular_repos = this.findPopularRepos(data);
+                console.log(popular_repos);
+            }).fail(err => {
+                console.log(err.message);
+                throw err;
             });
         }
-
-        static async sendToNode(data) {
-            const req_data = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            };
-            const response = await fetch('/api', req_data);
-            const res_json = await response.json();
-            console.log(res_json); 
-        }
     }
-
-    API.fetchGithub();
     
+    API.fetchGithub();
 });
 
