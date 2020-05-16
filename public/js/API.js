@@ -2,9 +2,6 @@
 
 $(window).ready(() => {
     class API {
-        constructor() {
-            
-        }
 
         static findPopularRepos(res) {
             let max_int = Number.MIN_SAFE_INTEGER; //readonly
@@ -36,4 +33,3 @@ $(window).ready(() => {
     
     API.fetchGithub();
 });
-

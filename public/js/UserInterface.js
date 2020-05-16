@@ -2,12 +2,12 @@
 
 $(window).ready(() => {
 
+    console.log(location);
+
     class UserInterface {
     
         static eventListeners(switcher) {
             $(window).ready(() => this.minifyHeader());
-    
-            $('#ruzgar-ata-ozkan').click(() => location.reload('../index.html'));
     
             // navigaton dropdown menu slider sandvic button
             $('#nav-button').click(() => {
