@@ -5,6 +5,11 @@ $(window).ready(() => {
     console.log(location);
 
     class UserInterface {
+
+        constructor() {
+            
+        }
+
     
         static eventListeners(switcher) {
             $(window).ready(() => this.minifyHeader());

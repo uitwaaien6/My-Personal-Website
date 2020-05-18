@@ -3,9 +3,32 @@
 $(window).ready(() => {
 
     class UserInterface {
+
+        constructor() {
+            
+        }
     
         static eventListeners(switcher) {
             $(window).ready(() => this.minifyHeader());
+
+            $(window).ready(() => this.minifyHeader());
+    
+            // navigaton dropdown menu slider sandvic button
+            $('#nav-button').click(() => {
+                switch (switcher) {
+                    case false:
+                        $('.dropdown').css('display', 'none');
+                        $('.dropdown').children().css('display','none');
+                        switcher = !switcher;
+                        break;
+                    case true:
+                        $('.dropdown').css('display','block');
+                        $('.dropdown').children().css('display', 'block');
+                        switcher = !switcher;    
+                        //FUCKING MORONS
+                        break;
+                }
+            });
         }
     
         //minify header or not, if the page y pos greater than 30 will add the class or will remove it
