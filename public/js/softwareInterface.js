@@ -7,23 +7,32 @@ $(window).ready(() => {
         constructor() {
             
         }
+
+        static getDOMElements() {
+            return {
+                header: 'header',
+                dropdown: '.dropdown',
+                global_nav: '.global-nav',
+                nav_button: '#nav-button',
+                read_more_text: '.read-more-text',
+            }
+        }
     
         static eventListeners(switcher) {
-            $(window).ready(() => this.minifyHeader());
-
-            $(window).ready(() => this.minifyHeader());
+            const dom = this.getDOMElements();
     
             // navigaton dropdown menu slider sandvic button
-            $('#nav-button').click(() => {
+            $(dom.nav_button).click(() => {
+                
                 switch (switcher) {
                     case false:
-                        $('.dropdown').css('display', 'none');
-                        $('.dropdown').children().css('display','none');
+                        $(dom.dropdown).css('display', 'none');
+                        $(dom.dropdown).children().css('display','none');
                         switcher = !switcher;
                         break;
                     case true:
-                        $('.dropdown').css('display','block');
-                        $('.dropdown').children().css('display', 'block');
+                        $(dom.dropdown).css('display','block');
+                        $(dom.dropdown).children().css('display', 'block');
                         switcher = !switcher;    
                         //FUCKING MORONS
                         break;
@@ -33,36 +42,39 @@ $(window).ready(() => {
     
         //minify header or not, if the page y pos greater than 30 will add the class or will remove it
         static minifyHeader() {
+            const dom = this.getDOMElements();
             const pageYPos = window.pageYOffset;
             if (pageYPos > 70) { // todo will rearrenge the pathname later
-                $('header').addClass('header-scroll');
-                $('.global-nav').find('a').css('padding', '20px 20px');
+                $(dom.header).addClass('header-scroll');
+                $(dom.global_nav).find('a').css('padding', '20px 20px');
             } else if (pageYPos < 70 && window.innerWidth >= 992) {
-                $('header').removeClass('header-scroll');
-                $('.global-nav').find('a').css('padding', '15px 20px');
+                $(dom.header).removeClass('header-scroll');
+                $(dom.global_nav).find('a').css('padding', '15px 20px');
             }
         }
     
         // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
         static updateNavBar(switcher) {
+            const dom = this.getDOMElements();
     
             $(window).scroll(() => this.minifyHeader());
     
             $(window).resize(() => {
+                
                 if (window.innerWidth >= 992) {
-                    $('.dropdown').css('display', 'inline-block');
-                    $('.dropdown').children().css('display', 'inline-block');
+                    $(dom.dropdown).css('display', 'inline-block');
+                    $(dom.dropdown).children().css('display', 'inline-block');
                     this.minifyHeader();
                 }
                 else if (window.innerWidth < 991) {
                     switch (switcher) {
                         case true:
-                            $('.dropdown').css('display', 'none');
-                            $('.dropdown').children().css('display', 'none');
+                            $(dom.dropdown).css('display', 'none');
+                            $(dom.dropdown).children().css('display', 'none');
                             break;
                         case false:
-                            $('.dropdown').css('display', 'block');
-                            $(".dropdown").children().css("display", "block");
+                            $(dom.dropdown).css('display', 'block');
+                            $(dom.dropdown).children().css("display", "block");
                             break;
                     }
                 }
@@ -73,5 +85,6 @@ $(window).ready(() => {
     let switcher = true;
     UserInterface.eventListeners(switcher);
     UserInterface.updateNavBar(switcher);
+    UserInterface.minifyHeader();
 });
 

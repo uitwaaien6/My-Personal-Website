@@ -2,29 +2,37 @@
 
 $(window).ready(() => {
 
-    console.log(location);
-
     class UserInterface {
 
         constructor() {
             
         }
 
+        static getDOMElements() {
+            return {
+                header: 'header',
+                dropdown: '.dropdown',
+                global_nav: '.global-nav',
+                nav_button: '#nav-button',
+                read_more_text: '.read-more-text',
+            }
+        }
     
         static eventListeners(switcher) {
-            $(window).ready(() => this.minifyHeader());
+            const dom = this.getDOMElements();
     
             // navigaton dropdown menu slider sandvic button
-            $('#nav-button').click(() => {
+            $(dom.nav_button).click(() => {
+                
                 switch (switcher) {
                     case false:
-                        $('.dropdown').css('display', 'none');
-                        $('.dropdown').children().css('display','none');
+                        $(dom.dropdown).css('display', 'none');
+                        $(dom.dropdown).children().css('display','none');
                         switcher = !switcher;
                         break;
                     case true:
-                        $('.dropdown').css('display','block');
-                        $('.dropdown').children().css('display', 'block');
+                        $(dom.dropdown).css('display','block');
+                        $(dom.dropdown).children().css('display', 'block');
                         switcher = !switcher;    
                         //FUCKING MORONS
                         break;
@@ -32,9 +40,9 @@ $(window).ready(() => {
             });
     
             // read more scroll down listener
-            $('.read-more-text').click(() => {
+            $(dom.read_more_text).click(() => {
                 const window_height = window.innerHeight;
-                const header_height = $('header').find('li').css('height');
+                const header_height = $(dom.header).find('li').css('height');
                 let extracted_val;
                 for (let i = 0; i < header_height.length; i++) {
                     const str = header_height.substr(0, i);
@@ -44,7 +52,7 @@ $(window).ready(() => {
                 let scroll_top_pos;
                 let scroll; 
 
-                if ($('header').hasClass('header-scroll')) {
+                if ($(dom.header).hasClass('header-scroll')) {
                     scroll_top_pos = window_height - parseFloat(extracted_val);
                     scroll = { left: 0, top: scroll_top_pos, behavior: 'smooth' };
                 } else {
@@ -59,39 +67,41 @@ $(window).ready(() => {
     
         //minify header or not, if the page y pos greater than 30 will add the class or will remove it
         static minifyHeader() {
+            const dom = this.getDOMElements();
             const pageYPos = window.pageYOffset;
-            if (pageYPos > 70) { // todo will rearrenge the pathname later
-                $('header').addClass('header-scroll');
-                $('.global-nav').find('a').css('color', 'black');
-                $('.global-nav').find('a').css('padding', '20px 20px');
+            if (pageYPos > 70) {
+                $(dom.header).addClass('header-scroll');
+                $(dom.global_nav).find('a').css('color', 'black');
+                $(dom.global_nav).find('a').css('padding', '20px 20px');
             } else if (pageYPos < 70 && window.innerWidth >= 992) {
-                $('header').removeClass('header-scroll');
-                $('.global-nav').find('a').css('color', 'white');
-                $('.global-nav').find('a').css('padding', '15px 20px');
+                $(dom.header).removeClass('header-scroll');
+                $(dom.global_nav).find('a').css('color', 'white');
+                $(dom.global_nav).find('a').css('padding', '15px 20px');
             }
         }
     
         // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
         static updateNavBar(switcher) {
+            const dom = this.getDOMElements();
     
             $(window).scroll(() => this.minifyHeader());
     
             $(window).resize(() => {
                 if (window.innerWidth >= 992) {
-                    $('.dropdown').css('display', 'inline-block');
-                    $('.dropdown').children().css('display', 'inline-block');
+                    $(dom .dropdown).css('display', 'inline-block');
+                    $(dom .dropdown).children().css('display', 'inline-block');
                     this.minifyHeader();
                 }
                 else if (window.innerWidth < 991) {
-                    $('.global-nav').find('a').css('color', 'black');
+                    $(dom.global_nav).find('a').css('color', 'black');
                     switch (switcher) {
                         case true:
-                            $('.dropdown').css('display', 'none');
-                            $('.dropdown').children().css('display', 'none');
+                            $(dom .dropdown).css('display', 'none');
+                            $(dom .dropdown).children().css('display', 'none');
                             break;
                         case false:
-                            $('.dropdown').css('display', 'block');
-                            $(".dropdown").children().css("display", "block");
+                            $(dom .dropdown).css('display', 'block');
+                            $(dom .dropdown).children().css("display", "block");
                             break;
                     }
                 }
@@ -102,5 +112,6 @@ $(window).ready(() => {
     let switcher = true;
     UserInterface.eventListeners(switcher);
     UserInterface.updateNavBar(switcher);
+    UserInterface.minifyHeader();;
 });
 
