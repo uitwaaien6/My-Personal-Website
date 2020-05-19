@@ -8,6 +8,7 @@ $(window).ready(() => {
         }
 
         static findPopularRepos(res) {
+            // extract the 3 most popular repos from the data passed in and return it
             let max_int = Number.MIN_SAFE_INTEGER;
             let repos = [];
             let popular_repos = [];
@@ -22,9 +23,10 @@ $(window).ready(() => {
             return popular_repos;
         }
 
-        static async fetchGithub() {
-            const url = 'https://api.github.com/users/uitwaaien6/repos';
-            $.get(url).done(data => {
+        static async fetchPopularRepos() {
+            // requests information from the app.js server 
+            const url = 'https://api.github.com/users';
+            $.get(`${url}/uitwaaien6/repos`).done(data => {
                 const popular_repos = this.findPopularRepos(data);
                 console.log(popular_repos);
             }).fail(err => {
@@ -34,11 +36,6 @@ $(window).ready(() => {
         }
     }
 
-    API.fetchGithub();
+    API.fetchPopularRepos();
     
 });
-
-
-
-
-
