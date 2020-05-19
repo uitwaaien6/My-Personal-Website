@@ -82,9 +82,21 @@ $(window).ready(() => {
         }
     }
 
-    let switcher = true;
-    UserInterface.eventListeners(switcher);
-    UserInterface.updateNavBar(switcher);
-    UserInterface.minifyHeader();
+    class Controller {
+        constructor() {
+
+        }
+
+        static deployUserInterface() {
+            let switcher = true;
+            UserInterface.eventListeners(switcher);
+            UserInterface.updateNavBar(switcher);
+            UserInterface.minifyHeader();
+        }
+
+    }
+
+    Controller.deployUserInterface();
+
 });
 

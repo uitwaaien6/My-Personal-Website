@@ -8,7 +8,7 @@ $(window).ready(() => {
         }
 
         static findPopularRepos(res) {
-            let max_int = Number.MIN_SAFE_INTEGER; //readonly
+            let max_int = Number.MIN_SAFE_INTEGER;
             let repos = [];
             let popular_repos = [];
             res.forEach(e => {
@@ -17,10 +17,9 @@ $(window).ready(() => {
                     max_int = e.stargazers_count;
                 }
             });
-            for (let i = repos.length - 1; i >= (repos.length - 3); i--) {
-                popular_repos.push(repos[i]);
-            }
-            return popular_repos; // returns an array of the repos with the highest stars, starts with the highest and decreases as the index goes.
+            repos = repos.reverse();
+            popular_repos = repos.slice(0, 3);
+            return popular_repos;
         }
 
         static async fetchGithub() {
@@ -35,6 +34,11 @@ $(window).ready(() => {
         }
     }
 
-    
+    API.fetchGithub();
     
 });
+
+
+
+
+
