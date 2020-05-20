@@ -10,11 +10,11 @@ $(window).ready(() => {
 
         static getDOMElements() {
             return {
-                header: 'header',
-                dropdown: '.dropdown',
-                global_nav: '.global-nav',
-                nav_button: '#nav-button',
-                read_more_text: '.read-more-text',
+                header: $('header'),
+                dropdown: $('.dropdown'),
+                global_nav: $('.global-nav'),
+                nav_button: $('#nav-button'),
+                read_more_text: $('.read-more-text'),
             }
         }
     
@@ -22,17 +22,17 @@ $(window).ready(() => {
             const dom = this.getDOMElements();
     
             // navigaton dropdown menu slider sandvic button
-            $(dom.nav_button).click(() => {
+            dom.nav_button.click(() => {
                 
                 switch (switcher) {
                     case false:
-                        $(dom.dropdown).css('display', 'none');
-                        $(dom.dropdown).children().css('display','none');
+                        dom.dropdown.css('display', 'none');
+                        dom.dropdown.children().css('display','none');
                         switcher = !switcher;
                         break;
                     case true:
-                        $(dom.dropdown).css('display','block');
-                        $(dom.dropdown).children().css('display', 'block');
+                        dom.dropdown.css('display','block');
+                        dom.dropdown.children().css('display', 'block');
                         switcher = !switcher;    
                         //FUCKING MORONS
                         break;
@@ -45,11 +45,11 @@ $(window).ready(() => {
             const dom = this.getDOMElements();
             const pageYPos = window.pageYOffset;
             if (pageYPos > 70) { // todo will rearrenge the pathname later
-                $(dom.header).addClass('header-scroll');
-                $(dom.global_nav).find('a').css('padding', '20px 20px');
+                dom.header.addClass('header-scroll');
+                dom.global_nav.find('a').css('padding', '20px 20px');
             } else if (pageYPos < 70 && window.innerWidth >= 992) {
-                $(dom.header).removeClass('header-scroll');
-                $(dom.global_nav).find('a').css('padding', '15px 20px');
+                dom.header.removeClass('header-scroll');
+                dom.global_nav.find('a').css('padding', '15px 20px');
             }
         }
     
@@ -60,21 +60,20 @@ $(window).ready(() => {
             $(window).scroll(() => this.minifyHeader());
     
             $(window).resize(() => {
-                
                 if (window.innerWidth >= 992) {
-                    $(dom.dropdown).css('display', 'inline-block');
-                    $(dom.dropdown).children().css('display', 'inline-block');
+                    dom.dropdown.css('display', 'inline-block');
+                    dom.dropdown.children().css('display', 'inline-block');
                     this.minifyHeader();
                 }
                 else if (window.innerWidth < 991) {
                     switch (switcher) {
                         case true:
-                            $(dom.dropdown).css('display', 'none');
-                            $(dom.dropdown).children().css('display', 'none');
+                            dom.dropdown.css('display', 'none');
+                            dom.dropdown.children().css('display', 'none');
                             break;
                         case false:
-                            $(dom.dropdown).css('display', 'block');
-                            $(dom.dropdown).children().css("display", "block");
+                            dom.dropdown.css('display', 'block');
+                            dom.dropdown.children().css("display", "block");
                             break;
                     }
                 }
@@ -82,21 +81,22 @@ $(window).ready(() => {
         }
     }
 
-    class Controller {
-        constructor() {
+    class UIController {
 
-        }
-
-        static deployUserInterface() {
+        static initSoftwareInterface() {
             let switcher = true;
             UserInterface.eventListeners(switcher);
             UserInterface.updateNavBar(switcher);
             UserInterface.minifyHeader();
         }
 
+        static initUIController() {
+            this.initSoftwareInterface();
+        }
+
     }
 
-    Controller.deployUserInterface();
+    UIController.initUIController();
 
 });
 

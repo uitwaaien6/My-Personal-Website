@@ -26,16 +26,28 @@ $(window).ready(() => {
         static async fetchPopularRepos() {
             // requests information from the app.js server 
             const url = 'https://api.github.com/users';
-            $.get(`${url}/uitwaaien6/repos`).done(data => {
+            $.get(`${url}/uitwaaien6/repos`)
+            .done(data => {
                 const popular_repos = this.findPopularRepos(data);
                 console.log(popular_repos);
-            }).fail(err => {
+            })
+            .fail(err => {
                 console.log(err.message);
                 throw err;
             });
         }
     }
 
-    API.fetchPopularRepos();
+    class APIController {
+        static initAPI() {
+            API.fetchPopularRepos();
+        }
+
+        static initAPIController() {
+            this.initAPI();
+        }
+    }
+
+    APIController.initAPIController();
     
 });
