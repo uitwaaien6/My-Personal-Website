@@ -108,27 +108,91 @@ header {
     padding-bottom: 2rem;
 }
 
-.popular-repos table a {
+.popular-repos-titles {
+    border: 1px solid rgb(228, 228, 228);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 0.5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.popular-repos-titles div {
+    width: 100%;
+    padding: 0.5rem;
+    border-right: 1px solid rgb(228, 228, 228);
+}
+
+.popular-repos-section {
+    border-bottom: 1px solid rgb(228, 228, 228);
+    border-left: 1px solid rgb(228, 228, 228);
+    border-right: 1px solid rgb(228, 228, 228);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.popular-repos-section div {
+    width: 100%;
+    padding: 0.5rem;
+    border-right: 1px solid rgb(243, 243, 243);
+}
+
+.popular-repos-section a {
     color: black;
     text-decoration: none;
 }
 
-.popular-repos table a:hover {
+.popular-repos-section a:hover {
     text-decoration: underline;
 }
 
-.popular-repos table thead td {
-    border-bottom: 2px solid rgb(175, 175, 175);
-    font-weight: bold;
+/* architecture section */
+
+.architecture-container {
+    width: 100%;
+    background-color: #191919;
+    color: white;
 }
 
-.popular-repos td {
-    margin: 0;
-    padding: 0.4rem 0.2rem;
-    letter-spacing: 0.2px;
-    border: 1px solid rgb(221, 221, 221);
-    min-width: 10rem;
+.architecture {
+    position: relative;
+    width: 60%;
+    left: 20%;
+    padding: 150px 0;
+
 }
+
+.architecture h2 {
+    font-weight: normal;
+    letter-spacing: 3px;
+}
+
+.architecture-table {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0;
+}
+
+.architecture-table-row {
+    width: 15rem;
+}
+
+.architecture-table-row h3 {
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.architecture-table-row ul {
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.architecture-table-row li {
+    padding: 3px 0px;
+    font-size: 0.9em;
+    line-height: 1.2rem;
+}
+
 
 /* footer section */
 footer {
@@ -233,10 +297,6 @@ footer a:hover {
         left: 0%;
     }
 
-    .popular-repos td {
-        min-width: 0px;
-    }
-
     .footer-nav li {
         padding: 20px 40px;
     }
@@ -276,7 +336,4 @@ footer a:hover {
         padding: 20px 5px;
     }
 
-    .popular-repos td {
-        max-width: 200px;
-    }
 }
