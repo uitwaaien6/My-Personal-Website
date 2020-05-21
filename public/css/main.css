@@ -176,20 +176,21 @@ header {
 .about-me-table {
     padding-top: 40px;
     padding-bottom: 60px;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .about-me-table-row {
-    display: inline-block;
     width: 220px;
     margin: 0px 10px;
     text-align: left;
     transition: all 0.3s ease-in-out;
 }
 
-.about-me-table-row h4{
+.about-me-table-row h4 {
     letter-spacing: 1px;
     font-size: 1.2rem;
+    font-weight: normal;
 }
 
 .about-me-table-row ul {
