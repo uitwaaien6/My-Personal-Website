@@ -1,7 +1,5 @@
 'use strict';
 
-$(window).ready(() => UIController.init());
-
 class UserInterface {
 
     constructor() {
@@ -124,3 +122,4 @@ class UIController {
     }
 }
 
+$(window).ready(() => UIController.init());

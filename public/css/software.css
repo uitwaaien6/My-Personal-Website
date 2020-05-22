@@ -12,7 +12,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     align-items: center;
     padding: 40px 10px;
@@ -39,7 +39,6 @@ header {
 
 .dropdown {
     display: inline-block;
-    transition: all 0.2s ease-in-out;
 }
 
 .dropdown div {
@@ -331,7 +330,7 @@ footer a:hover {
 
     #nav-button {
         display: block;
-        right: 5%;
+        right: 15%;
     }
 }
 

@@ -1,6 +1,6 @@
 'use strict';
 
-$(window).ready(() => UIController.init());
+
 
 class UserInterface {
 
@@ -96,3 +96,5 @@ class UIController {
     }
 
 }
+
+$(window).ready(() => UIController.init());
