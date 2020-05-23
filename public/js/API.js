@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 class API {
 
     constructor() {
@@ -10,7 +8,7 @@ class API {
 
     static findPopularRepos(res) {
         // extract the 3 most popular repos from the data passed in and return it
-        let max_int = Number.MIN_SAFE_INTEGER;
+        let max_int = Number.MIN_SAFE_INTEGER; // being fancy, might be -1 as well
         let repos = [];
         let popular_repos = [];
         res.forEach(e => {
@@ -24,13 +22,23 @@ class API {
         return popular_repos;
     }
 
+    static displayPopularRepos(repos) {
+        const sections = ['.popular-repos-table-first-repo', '.popular-repos-table-second-repo', '.popular-repos-table-third-repo'];
+        for (let i = 0; i < sections.length; i++) {
+            $(`${sections[i]}`).children()[0].children[0].href = repos[i].html_url;
+            $(`${sections[i]}`).children()[0].children[0].textContent = repos[i].name;
+            $(`${sections[i]}`).children()[1].textContent = repos[i].description;
+            $(`${sections[i]}`).children()[2].textContent = repos[i].language;
+            $(`${sections[i]}`).children()[3].textContent = repos[i].stargazers_count;
+        }
+    }
+
     static async fetchPopularRepos() {
         // requests information from the app.js server 
-        const url = 'https://api.github.com/users';
         $.get(`/api`)
         .done(data => {
             const popular_repos = this.findPopularRepos(data);
-            console.log(popular_repos);
+            this.displayPopularRepos(popular_repos);
         })
         .fail(err => {
             console.log(err.message);

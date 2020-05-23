@@ -28,7 +28,7 @@ header {
 .global-nav {
     list-style: none;
     position: relative;
-    left: 15%;
+    left: 18%;
     transition: all 0.2s ease-in-out;
 }
 
@@ -79,7 +79,7 @@ header {
 }
 
 #contact-me {
-    margin-left: 32rem;
+    margin-left: 28rem;
 }
 
 .home-image {
