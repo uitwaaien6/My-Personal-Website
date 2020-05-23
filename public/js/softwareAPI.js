@@ -59,3 +59,4 @@ class APIController {
 }
 
 $(window).ready(() => APIController.init());
+
