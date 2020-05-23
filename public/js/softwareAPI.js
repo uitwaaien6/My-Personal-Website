@@ -23,22 +23,32 @@ class API {
     }
 
     static displayRepos(repos) {
-        const sections = ['.popular-repos-table-first-repo', '.popular-repos-table-second-repo', '.popular-repos-table-third-repo'];
-        for (let i = 0; i < sections.length; i++) {
+        const sections = $('.popular-repos-section');
+        
+
+        for (let i = 0; i < repos.length; i++) {
+            sections[i].children[0].children[0].href = repos[i].html_url;
+            sections[i].children[0].children[0].textContent = repos[i].name;
+            sections[i].children[1].textContent = repos[i].description;
+            sections[i].children[2].textContent = repos[i].language;
+            sections[i].children[3].textContent = repos[i].created_at;
+            sections[i].children[4].textContent = repos[i].stargazers_count;
+            
+        }
+        /*for (let i = 0; i < sections.length; i++) {
             $(`${sections[i]}`).children()[0].children[0].href = repos[i].html_url;
             $(`${sections[i]}`).children()[0].children[0].textContent = repos[i].name;
             $(`${sections[i]}`).children()[1].textContent = repos[i].description;
             $(`${sections[i]}`).children()[2].textContent = repos[i].language;
             $(`${sections[i]}`).children()[3].textContent = repos[i].stargazers_count;
-        }
+        }*/
     }
 
     static async fetchRepos() {
         // requests information from the app.js server 
         $.get(`/api`)
         .done(data => {
-            const popular_repos = this.findPopularRepos(data);
-            this.displayRepos(popular_repos);
+            this.displayRepos(data);
         })
         .fail(err => {
             console.log(err.message);
