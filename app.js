@@ -1,8 +1,6 @@
 'use strict';
 
 const express = require('express');
-const requestPromise = require('request-promise');
-const request = require('request');
 const fetch = require('node-fetch');
 const app = express();
 
