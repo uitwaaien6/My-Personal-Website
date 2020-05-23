@@ -377,7 +377,9 @@ footer a:hover {
         min-width: 0px;
     }
 
-
+    .footer-nav li {
+        padding: 20px 25px;
+    }
 }
 
 @media only screen and (max-width: 990px) {
@@ -419,6 +421,8 @@ footer a:hover {
     .popular-repos td {
         padding: 0.3rem 0.2rem;
     }
+
+
 }
 
 @media only screen and (max-width: 650px) {

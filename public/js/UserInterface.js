@@ -60,7 +60,6 @@ class UserInterface {
 
             window.scrollTo(scroll);
         });
-
     }
 
     //minify header or not, if the page y pos greater than 30 will add the class or will remove it
