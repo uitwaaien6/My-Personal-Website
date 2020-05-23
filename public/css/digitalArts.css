@@ -96,7 +96,18 @@ header {
     width: 60%;
     position: relative;
     left: 20%;
+    padding: 150px 0;
+    text-align: center;
+}
+
+.digital-arts-image div {
+
+}
+
+.digital-arts-image img {
+    width: 800px;
     padding: 100px 0;
+    display: none;
 }
 
 /* footer section */
