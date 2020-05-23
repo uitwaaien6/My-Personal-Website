@@ -27,7 +27,7 @@ class API {
     static async fetchPopularRepos() {
         // requests information from the app.js server 
         const url = 'https://api.github.com/users';
-        $.get(`${url}/uitwaaien6/repos`)
+        $.get(`/api`)
         .done(data => {
             const popular_repos = this.findPopularRepos(data);
             console.log(popular_repos);
