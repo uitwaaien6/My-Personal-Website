@@ -59,8 +59,6 @@ class UserInterface {
     static fadeImages(time) {
         const pageYPos = window.pageYOffset;
         const images = $('.digital-arts-image img');
-        console.log(pageYPos);
-
         if (pageYPos >= 0) {
             $(images[0]).fadeIn(time);
         }
@@ -69,6 +67,21 @@ class UserInterface {
         }
         if (pageYPos >= 1800) {
             $(images[2]).fadeIn(time);
+        }
+        if (pageYOffset >= 3200) {
+            $(images[3]).fadeIn(time);
+        }
+        if (pageYOffset >= 4200) {
+            $(images[4]).fadeIn(time);
+        }
+        if (pageYOffset >= 5200) {
+            $(images[5]).fadeIn(time);
+        }
+        if (pageYOffset >= 6200) {
+            $(images[6]).fadeIn(time);
+        }
+        if (pageYOffset >= 6800) {
+            $(images[7]).fadeIn(time);
         }
     }
 
