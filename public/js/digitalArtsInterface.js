@@ -38,8 +38,8 @@ class UserInterface {
         });
 
 
-        $(window).scroll(() => {
-            //this.fadeImages(2000);
+        $(document).scroll(() => {
+            this.fadeImages(2000);
         });
     }
 
@@ -89,7 +89,7 @@ class UserInterface {
     static updateNavBar(switcher) {
         const dom = this.getDOMElements();
 
-        $(window).scroll(() => this.minifyHeader());
+        $(document).scroll(() => this.minifyHeader());
 
         $(window).resize(() => {
             if (window.innerWidth >= 992) {
@@ -121,7 +121,7 @@ class UIController {
         UserInterface.eventListeners(switcher);
         UserInterface.updateNavBar(switcher);
         UserInterface.minifyHeader();
-        //UserInterface.fadeImages(2000);
+        UserInterface.fadeImages(2000);
     }
 
     static init() {
