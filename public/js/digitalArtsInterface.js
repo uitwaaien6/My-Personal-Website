@@ -39,7 +39,7 @@ class UserInterface {
 
 
         $(window).scroll(() => {
-            this.fadeImages(2000);
+            //this.fadeImages(2000);
         });
     }
 
@@ -121,7 +121,7 @@ class UIController {
         UserInterface.eventListeners(switcher);
         UserInterface.updateNavBar(switcher);
         UserInterface.minifyHeader();
-        UserInterface.fadeImages(2000);
+        //UserInterface.fadeImages(2000);
     }
 
     static init() {
@@ -131,5 +131,4 @@ class UIController {
 }
 
 $(window).ready(() => UIController.init());
-
 

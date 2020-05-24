@@ -98,12 +98,13 @@ header {
     left: 20%;
     padding: 150px 0;
     text-align: center;
+    transition: all 0.3s ease-in;
 }
 
 .digital-arts-image img {
     width: 800px;
     padding: 100px 0;
-    display: none;
+    transition: all 0.3s ease-in;
 }
 
 /* footer section */
@@ -186,10 +187,14 @@ footer a:hover {
     #contact-me {
         margin-left: 18rem;
     }
-
-    .popular-repos {
-        width: 70%;
+    
+    .digital-arts {
+        width: 100%;
         left: 10%;
+    }
+
+    .digital-arts-image img {
+        width: 700px;
     }
 }
 
@@ -241,9 +246,23 @@ footer a:hover {
         display: block;
         right: 15%;
     }
+
+    .digital-arts-image img {
+        width: 500px;
+    }
 }
 
 @media only screen and (max-width: 650px) {
+
+    .digital-arts {
+        width: 100%;
+        left: 0%;
+    }
+
+    .digital-arts-image img {
+        width: 400px;
+    }
+
     .footer-nav li {
         padding: 20px 5px;
     }
