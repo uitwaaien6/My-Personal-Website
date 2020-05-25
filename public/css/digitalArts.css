@@ -102,9 +102,8 @@ header {
 }
 
 .digital-arts-image img {
-    width: 500px;
+    width: 800px;
     padding: 100px 0;
-    opacity: 0;
     transition: all 0.3s ease-in;
 }
 
@@ -190,12 +189,12 @@ footer a:hover {
     }
     
     .digital-arts {
-        width: 100%;
+        width: 80%;
         left: 10%;
     }
 
     .digital-arts-image img {
-        width: 500px;
+        width: 700px;
     }
 }
 
@@ -219,6 +218,9 @@ footer a:hover {
         padding: 20px 40px;
     }
 
+    .digital-arts {
+        left: 5%;
+    }
 }
 
 @media only screen and (max-width: 990px) {
@@ -249,7 +251,7 @@ footer a:hover {
     }
 
     .digital-arts-image img {
-        width: 300px;
+        width: 500px;
     }
 }
 

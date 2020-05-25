@@ -39,7 +39,7 @@ class UserInterface {
 
 
         $(document).scroll(() => {
-            this.fadeImages(700);
+            //this.fadeImages(1000);
         });
     }
 
@@ -58,63 +58,53 @@ class UserInterface {
 
     static fadeImages(time) {
         const pageYPos = window.pageYOffset;
-        const window_width = window.innerWidth;
-
         const images = $('.digital-arts-image img');
-
-        let img_width = '800px';
-
-        if (window_width <= 1300 && window_width > 1100) {
-            img_width = '700px';
-        } else if (window_width <= 990 && window_width > 650) {
-            img_width = '500px';
-        } else if (window_width <= 650) {
-            img_width = '400px';
-        }
 
         if (pageYPos >= 0) {
             if (parseFloat($(images[0]).css('opacity')) <= 0) {
-                $(images[0]).animate({width: img_width, opacity: 1}, time);
+                $(images[0]).animate({opacity: 1}, time);
+                console.log('fading')
             }
         }
         if (pageYPos >= 700) {
             if (parseFloat($(images[1]).css('opacity')) <= 0) {
-                $(images[1]).animate({width: img_width, opacity: 1}, time);
+                $(images[1]).animate({opacity: 1}, time);
+                console.log('fading')
             }
         }
         if (pageYPos >= 1800) {
             if (parseFloat($(images[2]).css('opacity')) <= 0) {
-                $(images[2]).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, time);
+                $(images[2]).animate({opacity: 1}, time);
                 console.log('fading')
             }
         }
         if (pageYOffset >= 3200) {
             if (parseFloat($(images[3]).css('opacity')) <= 0) {
-                $(images[3]).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, time);
+                $(images[3]).animate({opacity: 1}, time);
                 console.log('fading')
             }
         }
         if (pageYOffset >= 4200) {
             if (parseFloat($(images[4]).css('opacity')) <= 0) {
-                $(images[4]).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, time);
+                $(images[4]).animate({opacity: 1}, time);
                 console.log('fading')
             }
         }
         if (pageYOffset >= 5200) {
             if (parseFloat($(images[5]).css('opacity')) <= 0) {
-                $(images[5]).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, time);
+                $(images[5]).animate({opacity: 1}, time);
                 console.log('fading')
             }
         }
         if (pageYOffset >= 6200) {
             if (parseFloat($(images[6]).css('opacity')) <= 0) {
-                $(images[6]).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, time);
+                $(images[6]).animate({opacity: 1}, time);
                 console.log('fading')
             }
         }
         if (pageYOffset >= 6800) {
             if (parseFloat($(images[7]).css('opacity')) <= 0) {
-                $(images[7]).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, time);
+                $(images[7]).animate({opacity: 1}, time);
                 console.log('fading')
             }
         }
@@ -156,7 +146,7 @@ class UIController {
         UserInterface.eventListeners(switcher);
         UserInterface.updateNavBar(switcher);
         UserInterface.minifyHeader();
-        UserInterface.fadeImages(1000);
+        //UserInterface.fadeImages(1000);
     }
 
     static init() {
