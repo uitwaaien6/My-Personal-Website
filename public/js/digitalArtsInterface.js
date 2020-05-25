@@ -39,7 +39,7 @@ class UserInterface {
 
 
         $(document).scroll(() => {
-            this.fadeImages(2000);
+            //this.fadeImages(2000);
         });
     }
 
@@ -83,6 +83,10 @@ class UserInterface {
         if (pageYOffset >= 6800) {
             $(images[7]).fadeIn(time);
         }
+
+        for (let e in images) {
+            console.log($(images[e]).position());
+        }
     }
 
     // update the naviagtion bar when the sceen resized change all the children none or block or inline-block
@@ -121,7 +125,7 @@ class UIController {
         UserInterface.eventListeners(switcher);
         UserInterface.updateNavBar(switcher);
         UserInterface.minifyHeader();
-        UserInterface.fadeImages(2000);
+        //UserInterface.fadeImages(2000);
     }
 
     static init() {
