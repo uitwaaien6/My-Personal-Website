@@ -386,6 +386,7 @@ footer a:hover {
     header {
         padding: 0px 10px;
         background-color: white;
+        width: 100%;
     }
 
     .global-nav a {
@@ -406,7 +407,7 @@ footer a:hover {
 
     #nav-button {
         display: block;
-        right: 5%;
+        right: 15%;
     }
 
     .read-more {

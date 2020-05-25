@@ -102,8 +102,9 @@ header {
 }
 
 .digital-arts-image img {
-    width: 800px;
+    width: 500px;
     padding: 100px 0;
+    opacity: 0;
     transition: all 0.3s ease-in;
 }
 
@@ -194,7 +195,7 @@ footer a:hover {
     }
 
     .digital-arts-image img {
-        width: 700px;
+        width: 500px;
     }
 }
 
@@ -248,7 +249,7 @@ footer a:hover {
     }
 
     .digital-arts-image img {
-        width: 500px;
+        width: 300px;
     }
 }
 
