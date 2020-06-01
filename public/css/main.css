@@ -160,22 +160,22 @@ header {
 }
 
 .about-me-title {
-    padding-top: 40px;
+    padding-top: 70px;
     letter-spacing: 3px;
     font-weight: normal;
     font-size: 1.7rem;
 }
 
 .about-me-content {
-    padding-top: 40px;
+    padding-top: 70px;
     letter-spacing: 1.3px;
     line-height: 1.5rem;
     font-size: 1.1rem;
 }
 
 .about-me-table {
-    padding-top: 40px;
-    padding-bottom: 60px;
+    padding-top: 70px;
+    padding-bottom: 70px;
     display: flex;
     justify-content: space-around;
 }

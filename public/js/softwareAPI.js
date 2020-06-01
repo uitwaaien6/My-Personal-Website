@@ -15,7 +15,6 @@ class API {
             sections[i].children[2].textContent = repos[i].language;
             sections[i].children[3].textContent = repos[i].created_at;
             sections[i].children[4].textContent = repos[i].stargazers_count;
-            
         }
     }
 
