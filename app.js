@@ -37,3 +37,7 @@ app.get('/api', async (req, res) => {
     res.json(repos);
     console.log('Repos has been sent to client!');
 });
+
+app.post('/api', (req, res) => {
+    console.log('Configurating post request');
+});
