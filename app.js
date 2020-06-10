@@ -39,5 +39,6 @@ app.get('/api', async (req, res) => {
 });
 
 app.post('/api', (req, res) => {
-    console.log('Configurating post request');
+    console.log('Configurating post request...');
+    console.log(res.body);
 });
